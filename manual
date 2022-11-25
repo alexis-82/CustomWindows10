@@ -1,3 +1,6 @@
 1. Installazione pulita
 2. Entrare in modalità Administrator tramite cmd = %windir%\system32\sysprep\sysprep.exe /audit /reboot
 3. Configurare un secondo HDD 
+4. Installazione dei software tramite Chocolatey
+5. Eliminare eventuali utenti
+6. Aggiornamento del sistema operativo
