@@ -12,7 +12,7 @@ cd C:\Users
 rmdir /s /q Administrator
 echo.
 echo.
-set/p "end=[31mPulizia effettuata, premere un tasto![0m"
+set/p "end=[31mPulizia effettuata, premere un tasto pe uscire![0m"
 exit
 
 
