@@ -17,14 +17,12 @@ echo.
 set/p "newname=[4mInserire il nuovo nome:[0m "
 echo.
 cd c:\Users
-:: Enter the name used when the operating system was created
 ren "%oldname%" "%newname%"
 echo.
 reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\%sid%" /v ProfileImagePath /t REG_SZ /d C:\Users\%newname% /f
 echo.
 echo.
 echo.
-:: Enter the name used when the operating system was created
 wmic useraccount where name="%oldname%" rename "%newname%"
 echo [31mAccount Administrator DISABILITATO![0m
 net user Administrator /active:no
