@@ -67,7 +67,9 @@ Avviamo il seguente file nell'account di Amministratore
 **post_install_3.bat**
 Avviamo l'ultimo file per eliminare l'account Amministratore
 **⚠ ATTENZIONE! ⚠** I file  devono essere eseguiti tutti come Amministratore
+
 ---
+
 ## _Manual in English_
 
 1. Clean installation of Windows 10/11
