@@ -12,7 +12,7 @@ echo.
 echo.
 set/p "sid=[4mCopiare il valore SID qui:[0m "
 echo.
-set/p "oldname=[4mCopiare il valore SID qui:[0m "
+set/p "oldname=[4mCopiare il nome qui:[0m "
 echo.
 set/p "newname=[4mInserire il nuovo nome:[0m "
 echo.
