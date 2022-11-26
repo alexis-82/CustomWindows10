@@ -61,13 +61,21 @@ oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pE
 
 ## PATCH
 **post_install_1.bat**
+
 Avviamolo in modalità Amministratore
+
 **patch_admin.bat**
+
 Avviamo il seguente file nell'account di Amministratore
+
 **post_install_3.bat**
+
 Avviamo l'ultimo file per eliminare l'account Amministratore
+
 **⚠ ATTENZIONE! ⚠** I file  devono essere eseguiti tutti come Amministratore
+
 ---
+
 ## _Manual in English_
 
 1. Clean installation of Windows 10/11
@@ -128,11 +136,17 @@ oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pE
 
 ## PATCH
 **post_install_1.bat**
+
 Let's start it in Administrator mode
+
 **patch_admin.bat**
+
 We launch the following file in the Administrator account
+
 **post_install_3.bat**
+
 Let's start the last file to delete the Administrator account
+
 **⚠ ATTENTION! ⚠** The files must all be run as Administrator
 
 
