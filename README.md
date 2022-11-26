@@ -136,12 +136,15 @@ oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pE
 
 ## PATCH
 **post_install_1.bat**
+
 Let's start it in Administrator mode
 
 **patch_admin.bat**
+
 We launch the following file in the Administrator account
 
 **post_install_3.bat**
+
 Let's start the last file to delete the Administrator account
 
 **⚠ ATTENTION! ⚠** The files must all be run as Administrator
