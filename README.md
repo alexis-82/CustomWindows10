@@ -4,7 +4,7 @@
 
 1. Installazione pulita di Windows 10/11
 2. Entrare in modalità Administrator tramite CMD = %windir%\system32\sysprep\sysprep.exe /audit /reboot
-              **⚠ ATTENZIONE! ⚠** AL RIAVVIO LA FINESTRA DI SYSPREP DEVE RIMANERE APERTA!
+**⚠ ATTENZIONE! ⚠** AL RIAVVIO LA FINESTRA DI SYSPREP DEVE RIMANERE APERTA!
 3. Configurare una seconda unità HDD 
 4. Installazione dei software tramite Chocolatey usando il terminale PowerShell come Amministratore
 ```
