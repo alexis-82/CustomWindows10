@@ -100,7 +100,7 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTeleme
 9. Now we set Sysprep to "Go to the Configuration Wizard", we put the [x]check on Generalize and on System shutdown options we put "Shut down the system" and OK.
 10. We set the boot with the Windows ISO on the virtual machine and start the machine
 11. At the first configuration screen, press the SHIFT + F10 keys and the command prompt will open and write:
-**⚠ ATTENTION!⚠** THE UNITS MAY BE DIFFERENT, CONTROLLED WITH THE FIRST COMMAND!
+  **⚠ ATTENTION!⚠** THE UNITS MAY BE DIFFERENT, CONTROLLED WITH THE FIRST COMMAND!
 ```
 - diskpart
 - list disk
