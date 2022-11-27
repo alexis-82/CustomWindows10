@@ -1,5 +1,4 @@
-# Custom Windows 10/11
-
+﻿# Custom Windows 10/11
 
 ## _Manuale in Italiano_
 
@@ -22,9 +21,10 @@ echo ““ > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-D
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
 ```
 8. Scarichiamo la patch sul desktop senza avviarlo
-9. Ora impostiamo Sysprep su "Passare alla Configurazione guidata", mettiamo la [x]spunta su Generalizza e su Opzioni di arresto del sistema mettiamo "Arresta il sistema".
+9. Ora impostiamo Sysprep su "Passare alla Configurazione guidata", mettiamo la [x]spunta su Generalizza e su Opzioni di arresto del sistema mettiamo "Arresta il sistema" e OK.
 10. Impostiamo sulla macchina virtuale il boot con la iso di Windows e avviamo la macchina
 11. Alla prima schermata di configurazione premiamo i tasti SHIFT+F10 e si aprirà il prompt dei comandi e scriviamo:
+**⚠ ATTENZIONE! ⚠** LE UNITA' POSSONO ESSERE DIFFERENTI, CONTROLLATE CON IL PRIMO COMANDO!
 ```
 - diskpart
 - list disk
@@ -80,7 +80,7 @@ Avviamo l'ultimo file per eliminare l'account Amministratore
 
 1. Clean installation of Windows 10/11
 2. Enter Administrator via CMD = %windir%\system32\sysprep\sysprep.exe /audit /reboot
-**⚠ ATTENTION! ⚠** ON RESTART THE SYSPREP WINDOW MUST REMAIN OPEN!
+**⚠ ATTENTION!⚠** ON RESTART THE SYSPREP WINDOW MUST REMAIN OPEN!
 3. Configure a second HDD unit
 4. Software installation via Chocolatey using PowerShell terminal as Administrator
 ```
@@ -97,9 +97,10 @@ echo ““ > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-D
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
 ```
 8. We download the patch to the desktop without starting it
-9. Now we set Sysprep to "Go to the Configuration Wizard", we put the [x]check on Generalize and on System shutdown options we put "Shut down the system".
+9. Now we set Sysprep to "Go to the Configuration Wizard", we put the [x]check on Generalize and on System shutdown options we put "Shut down the system" and OK.
 10. We set the boot with the Windows ISO on the virtual machine and start the machine
 11. At the first configuration screen, press the SHIFT + F10 keys and the command prompt will open and write:
+**⚠ ATTENTION!⚠** THE UNITS MAY BE DIFFERENT, CONTROLLED WITH THE FIRST COMMAND!
 ```
 - diskpart
 - list disk
@@ -136,17 +137,11 @@ oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pE
 
 ## PATCH
 **post_install_1.bat**
-
 Let's start it in Administrator mode
-
 **patch_admin.bat**
-
 We launch the following file in the Administrator account
-
 **post_install_3.bat**
-
 Let's start the last file to delete the Administrator account
-
 **⚠ ATTENTION! ⚠** The files must all be run as Administrator
 
 
