@@ -5,7 +5,7 @@ setlocal enabledelayedexpansion
 set fore_dred=[31m
 echo.
 echo.
-echo [31mAccount Administrator ABILITATO![0m
+echo [31mAccount Administrator ATTIVATO![0m
 net user Administrator /active:yes
 echo.
 echo.
