@@ -1,7 +1,7 @@
-
+PowerShell:
 PS> Get-AppxPackage -Name "Microsoft.WindowsStore" | Remove-AppxPackage
 or
-PS>Get-AppxPackage -Name "Microsoft.WindowsStore" -AllUsers | Remove-AppxPackage
+PS> Get-AppxPackage -Name "Microsoft.WindowsStore" -AllUsers | Remove-AppxPackage
 
 # Microsoft
 "Microsoft.549981C3F5F10" #Cortana
