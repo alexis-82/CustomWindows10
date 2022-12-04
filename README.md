@@ -119,7 +119,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 | choco install [software] | Software installation |
 | choco upgrade [software] | Software update |
 
-⭕ Other package removal systems: manual: CustomWindows/list/ or 🔗 [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
+⭕ Other packages removal systems: manual: CustomWindows/list/ or 🔗 [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 
 5. Delete any users
 6. System update
