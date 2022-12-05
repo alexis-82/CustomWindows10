@@ -24,7 +24,6 @@
 ```
 
 7. Ora impostiamo Sysprep su "Passare alla Configurazione guidata", mettiamo la [x]spunta su Generalizza e su Opzioni di arresto del sistema mettiamo "Arresta il sistema" e OK.
-
 8. Riavviamo il sistema e facciamo le installazione dei software tramite Chocolatey usando il terminale PowerShell come Amministratore
 ```
 - Set-ExecutionPolicy Bypass -Scope Process -Force; `
@@ -90,7 +89,7 @@ Avviamo il seguente file nell'account di Amministratore
 
 Avviamo l'ultimo file nell'account dell'utente
 
-**⚠ ATTENZIONE! ⚠** I file  devono essere eseguiti tutti come Amministratore
+**⚠ ATTENZIONE! ⚠** I file devono essere eseguiti tutti come Amministratore
 
 ---
 
