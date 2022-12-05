@@ -51,7 +51,11 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTeleme
 - list disk
 - select disk 0 #Partizione di Windows
 - list partition
+<<<<<<< HEAD
 - select partition 3 #PRIMARIA
+=======
+- select partition
+>>>>>>> 884e5a7c6488eda3c6904732acf97507cf1c5220
 - assign letter=A
 - list disk
 - select disk 1 #Partizione HDD vuota
