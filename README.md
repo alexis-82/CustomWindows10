@@ -50,15 +50,18 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTeleme
 - diskpart
 - list disk
 - select disk 0 #Partizione di Windows
-- select partition
+- list partition
+- select partition 3 #PRIMARIA
 - assign letter=A
+- list disk
 - select disk 1 #Partizione HDD vuota
 - list partition
 - create partition primary
 - format fs=ntfs quick
 - list partition
-- select partition 1
+- select partition 1 #PRIMARIA
 - assign letter=B
+- exit
 - dism /capture-image /imagefile:B:\install.wim /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
 ```
 
@@ -142,16 +145,19 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTeleme
 ```
 - diskpart
 - list disk
-- select disk 0 #Partizione di Windows
-- select partition
+- select disk 0 # Windows Partition
+- list partition
+- select partition 3 #PRIMARY
 - assign letter=A
-- select disk 1 #Partizione HDD vuota
+- list disk
+- select disk 1 #Empty Disk
 - list partition
 - create partition primary
 - format fs=ntfs quick
 - list partition
-- select partition 1
+- select partition 1 #PRIMARY
 - assign letter=B
+- exit
 - dism /capture-image /imagefile:B:\install.wim /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
 ```
 
