@@ -17,17 +17,17 @@
 6. Pulizia del sistema con i seguenti comandi sempre da CMD:
 
 ```
-sc delete DiagTrack
-sc delete dmwappushservice
-echo ““ > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-DiagTrack-Listener.etl
-REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
+- sc delete DiagTrack
+- sc delete dmwappushservice
+- echo ““ > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-DiagTrack-Listener.etl
+- REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
 ```
 
 7. Ora impostiamo Sysprep su "Passare alla Configurazione guidata", mettiamo la [x]spunta su Generalizza e su Opzioni di arresto del sistema mettiamo "Arresta il sistema" e OK.
 
 8. Riavviamo il sistema e facciamo le installazione dei software tramite Chocolatey usando il terminale PowerShell come Amministratore
 ```
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
+- Set-ExecutionPolicy Bypass -Scope Process -Force; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
@@ -41,7 +41,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 
 ⭕ Altri sistemi di rimozione pacchetti: manuale: CustomWindows/list/ oppure 🔗 [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 
-9. Scarichiamo le patch e li trasferiamo in C:\
+9. Scarichiamo le patch e le trasferiamo in C:\
 10. Il file oscdimg.exe invece lo spostiamo in D:\ (nella seconda unità)
 11. Impostiamo sulla macchina virtuale il boot con la iso di Windows e avviamo la macchina
 12. Alla prima schermata di configurazione premiamo i tasti SHIFT+F10 e si aprirà il prompt dei comandi e scriviamo:
@@ -111,16 +111,16 @@ Avviamo l'ultimo file nell'account dell'utente
 6. System cleaning with the following commands always from CMD:
 
 ```
-sc delete DiagTrack
-sc delete dmwappushservice
-echo ““ > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-DiagTrack-Listener.etl
-REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
+- sc delete DiagTrack
+- sc delete dmwappushservice
+- echo ““ > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-DiagTrack-Listener.etl
+- REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
 ```
 
 7. Now let's set Sysprep to "Go to Setup Wizard", put the [x]tick on Generalize and on Shutdown Options put "Shut down" and OK.
 8. We restart the system and install the software via Chocolatey using the PowerShell terminal as Administrator
 ```
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
+- Set-ExecutionPolicy Bypass -Scope Process -Force; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
@@ -160,7 +160,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 13. We close the Windows installation
 14. If we have done everything right in the secondary we will find the file install.wim
 15. In the same drive we create a folder eg. files and we copy all the files from the Windows CD-ROM
-16. Copy the install.wim file into the \ files \ sources \ folder and overwrite
+16. Copy the install.wim file into the \files\sources\ folder and overwrite
 17. Last step we run the following command to generate our beautiful ISO:
 
 ```
@@ -168,7 +168,6 @@ oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pE
 ```
 
 **⚠ ATTENTION! ⚠** Drive D:\ above is the secondary HDD drive!
-
 
 
 ## PATCH
