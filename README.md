@@ -41,32 +41,32 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 ⭕ Altri sistemi di rimozione pacchetti: manuale: CustomWindows/list/ oppure 🔗 [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 
 9. Scarichiamo le patch e le trasferiamo in C:\
-10. Il file oscdimg.exe invece lo spostiamo in D:\ (nella seconda unità)
+10. Il file oscdimg.exe invece lo spostiamo in D:\ (nella seconda unità) e spegnere
 11. Impostiamo sulla macchina virtuale il boot con la iso di Windows e avviamo la macchina
 12. Alla prima schermata di configurazione premiamo i tasti SHIFT+F10 e si aprirà il prompt dei comandi e scriviamo:
 
 **⚠ ATTENZIONE! ⚠** LE UNITA' POSSONO ESSERE DIFFERENTI, CONTROLLATE CON IL PRIMO COMANDO!
 
 ```
-- diskpart
-- list disk
-- select disk 0 #Partizione di Windows
-- list partition
-- select partition 3 #PRIMARIA
-- assign letter=A
-- list disk
-- select disk 1 #Partizione HDD vuota
-- list partition
-- select partition 1 #PRIMARIA
-- assign letter=B
-- exit
-- dism /capture-image /imagefile:B:\install.wim /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
+diskpart
+list disk
+select disk 0 #Partizione di Windows
+list partition
+select partition 3 #PRIMARIA
+assign letter=A
+list disk
+select disk 1 #Partizione HDD vuota
+list partition
+select partition 2 #PRIMARIA
+assign letter=B
+exit
+dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
 ```
 
-13. Chiudiamo l'installazione di Windows
+13. Chiudiamo l'installazione di Windows e riavviare
 14. Se abbiamo fatto tutto bene nel disco secondario ci troveremo il file install.wim
 15. Nella stessa unità creamo una cartella es. files e ci copiamo tutti i files del CD-ROM di Windows
-16. Copiamo il file install.wim dentro alla cartella \files\sources\ e sovrascriviamo
+16. Copiamo il file install.esd dentro alla cartella \files\sources\ e sovrascriviamo
 17. Ultimo passaggio eseguiamo il seguente comando per generare la nostra bella ISO:
 
 ```
@@ -134,32 +134,32 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 ⭕ Other ways to remove packages: manual: CustomWindows/list/ or 🔗 [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 
 9. We download the patches and transfer them to C:\
-10. The oscdimg.exe file instead we move it to D:\ (in the second drive)
+10. The oscdimg.exe file instead we move it to D:\ (in the second drive) and turn off
 11. We set the boot with the Windows ISO on the virtual machine and start the machine
 12. At the first configuration screen, press the SHIFT + F10 keys and the command prompt will open and write:
 
 **⚠ ATTENTION!⚠** THE UNITS MAY BE DIFFERENT, CONTROLLED WITH THE FIRST COMMAND!
 
 ```
-- diskpart
-- list disk
-- select disk 0 # Windows Partition
-- list partition
-- select partition 3 #PRIMARY
-- assign letter=A
-- list disk
-- select disk 1 #Empty Disk
-- list partition
-- select partition 1 #PRIMARY
-- assign letter=B
-- exit
-- dism /capture-image /imagefile:B:\install.wim /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
+diskpart
+list disk
+select disk 0 # Windows Partition
+list partition
+select partition 3 #PRIMARY
+assign letter=A
+list disk
+select disk 1 #Empty Disk
+list partition
+select partition 2 #PRIMARY
+assign letter=B
+exit
+dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
 ```
 
-13. We close the Windows installation
+13. We close the Windows installation and reboot
 14. If we have done everything right in the secondary we will find the file install.wim
 15. In the same drive we create a folder eg. files and we copy all the files from the Windows CD-ROM
-16. Copy the install.wim file into the \files\sources\ folder and overwrite
+16. Copy the install.esd file into the \files\sources\ folder and overwrite
 17. Last step we run the following command to generate our beautiful ISO:
 
 ```
