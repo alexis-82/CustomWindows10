@@ -64,7 +64,7 @@ dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindo
 ```
 
 13. Chiudiamo l'installazione di Windows e riavviare
-14. Se abbiamo fatto tutto bene nel disco secondario ci troveremo il file install.wim
+14. Se abbiamo fatto tutto bene nel disco secondario ci troveremo il file install.esd
 15. Nella stessa unità creamo una cartella es. files e ci copiamo tutti i files del CD-ROM di Windows
 16. Copiamo il file install.esd dentro alla cartella \files\sources\ e sovrascriviamo
 17. Ultimo passaggio eseguiamo il seguente comando per generare la nostra bella ISO:
@@ -157,7 +157,7 @@ dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindo
 ```
 
 13. We close the Windows installation and reboot
-14. If we have done everything right in the secondary we will find the file install.wim
+14. If we have done everything right in the secondary we will find the file install.esd
 15. In the same drive we create a folder eg. files and we copy all the files from the Windows CD-ROM
 16. Copy the install.esd file into the \files\sources\ folder and overwrite
 17. Last step we run the following command to generate our beautiful ISO:
