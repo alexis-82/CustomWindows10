@@ -2,8 +2,15 @@
 
 ## _Manuale in Italiano_
 
+### Preparazione postazione
+Macchina virtuale  
+RAM: 4GB  
+HDD1: 60Gb (minimo)
+HDD2: 15Gb
+
 1. Installazione pulita di Windows 10/11
-2. Entrare in modalità Administrator tramite CMD:
+2. Formattare HDD2
+3. Entrare in modalità Administrator tramite CMD:
 
 ```
 %windir%\system32\sysprep\sysprep.exe /audit /reboot
@@ -12,10 +19,11 @@
 **⚠ ATTENZIONE! ⚠**  
 AL RIAVVIO LA FINESTRA DI SYSPREP DEVE RIMANERE APERTA!
 
-3. Configurare una seconda unità HDD 
-4. Eliminare tutti gli utenti, no Amministratore
-5. Aggiornamento del sistema
-6. Pulizia del sistema con i seguenti comandi sempre da CMD:
+4. Eliminare tutti gli utenti, no Amministratore (Pannello di controllo -> Account utente -> Rimuovi account utente)
+5. Rimuovere cartelle in C:\Utenti, no Amministratore
+6. Attivazione di Windows
+7. Aggiornamento del sistema
+8. Pulizia del sistema con i seguenti comandi sempre da CMD:
 
 ```
 - sc delete DiagTrack
@@ -24,8 +32,8 @@ AL RIAVVIO LA FINESTRA DI SYSPREP DEVE RIMANERE APERTA!
 - REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
 ```
 
-7. Ora impostiamo Sysprep su "Passare alla Configurazione guidata", mettiamo la [x]spunta su Generalizza e su Opzioni di arresto del sistema mettiamo "Arresta il sistema" e OK.
-8. Riavviamo il sistema e facciamo le installazione dei software tramite Chocolatey usando il terminale PowerShell come Amministratore
+9. Ora impostiamo Sysprep su "Passare alla Configurazione guidata", mettiamo la [x]spunta su Generalizza e su Opzioni di arresto del sistema mettiamo "Arresta il sistema" e OK.
+10. Riavviamo il sistema e facciamo le installazioni dei software tramite Chocolatey usando il terminale PowerShell come Amministratore
 ```
 - Set-ExecutionPolicy Bypass -Scope Process -Force; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -41,10 +49,10 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 
 ⭕ Altri sistemi di rimozione pacchetti: manuale: CustomWindows/list/ oppure 🔗 [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 
-9. Scarichiamo le patch e le trasferiamo in C:\
-10. Il file oscdimg.exe invece lo spostiamo in D:\ (nella seconda unità) e spegnere
-11. Impostiamo sulla macchina virtuale il boot con la iso di Windows e avviamo la macchina
-12. Alla prima schermata di configurazione premiamo i tasti SHIFT+F10 e si aprirà il prompt dei comandi e scriviamo:
+11. Scarichiamo le patch e le trasferiamo in C:\
+12. Il file oscdimg.exe invece lo spostiamo in D:\ (nella seconda unità) e spegnere
+13. Impostiamo sulla macchina virtuale il boot con la iso di Windows e avviamo la macchina
+14. Alla prima schermata di configurazione premiamo i tasti SHIFT+F10 e si aprirà il prompt dei comandi e scriviamo:
 
 **⚠ ATTENZIONE! ⚠**  
 LE UNITA' POSSONO ESSERE DIFFERENTI, CONTROLLATE CON IL PRIMO COMANDO!
@@ -65,11 +73,11 @@ exit
 dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
 ```
 
-13. Chiudiamo l'installazione di Windows e riavviare
-14. Se abbiamo fatto tutto bene nel disco secondario ci troveremo il file install.esd
-15. Nella stessa unità creamo una cartella es. files e ci copiamo tutti i files del CD-ROM di Windows
-16. Copiamo il file install.esd dentro alla cartella \files\sources\ e sovrascriviamo
-17. Ultimo passaggio eseguiamo il seguente comando per generare la nostra bella ISO:
+15. Chiudiamo l'installazione di Windows e riavviare
+16. Se abbiamo fatto tutto bene nel disco secondario ci troveremo il file install.esd
+17. Nella stessa unità creamo una cartella es. files e ci copiamo tutti i files del CD-ROM di Windows
+18. Copiamo il file install.esd dentro alla cartella \files\sources\ e sovrascriviamo (alcune versioni hanno il file install.win, controllare all'interno di sources)
+19. Ultimo passaggio eseguiamo il seguente comando per generare la nostra bella ISO:
 
 ```
 oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pEF,e,bD:\files\efi\microsoft\boot\efisys.bin D:\files D:\CustomWindows.iso
@@ -107,8 +115,15 @@ I file devono essere eseguiti tutti come Amministratore
 
 ## _Manual in English_
 
+### Work station preparation
+Virtual machine
+RAM: 4GB
+HDD 1: 60Gb (minimum)
+HDD 2: 15Gb
+
 1. Clean install of Windows 10/11
-2. Enter Administrator mode via CMD:
+2. Formattare HDD2
+3. Enter Administrator mode via CMD:
 
 ```
 %windir%\system32\sysprep\sysprep.exe /audit /reboot
@@ -117,10 +132,11 @@ I file devono essere eseguiti tutti come Amministratore
 **⚠ ATTENTION! ⚠**  
 THE SYSPREP WINDOW MUST REMAIN OPEN ON REBOOT!
 
-3. Configure a second HDD unit
-4. Delete all users, no Administrator
-5. System update
-6. System cleaning with the following commands always from CMD:
+4. Delete all users, no Administrator (Control Panel -> User Accounts -> Remove User Account)
+5. Remove folders in C:\Users, no Administrator
+6. Windows activation
+7. System update
+8. System cleaning with the following commands always from CMD:
 
 ```
 - sc delete DiagTrack
@@ -129,8 +145,8 @@ THE SYSPREP WINDOW MUST REMAIN OPEN ON REBOOT!
 - REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
 ```
 
-7. Now let's set Sysprep to "Go to Setup Wizard", put the [x]tick on Generalize and on Shutdown Options put "Shut down" and OK.
-8. We restart the system and install the software via Chocolatey using the PowerShell terminal as Administrator
+9. Now let's set Sysprep to "Enter System Out-of-Box Experience (OOBE)", put the [x]tick on Generalize and on Shutdown Options put "Shut down" and OK.
+10. We restart the system and install the software via Chocolatey using the PowerShell terminal as Administrator
 ```
 - Set-ExecutionPolicy Bypass -Scope Process -Force; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -146,10 +162,10 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 
 ⭕ Other ways to remove packages: manual: CustomWindows/list/ or 🔗 [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 
-9. We download the patches and transfer them to C:\
-10. The oscdimg.exe file instead we move it to D:\ (in the second drive) and turn off
-11. We set the boot with the Windows ISO on the virtual machine and start the machine
-12. At the first configuration screen, press the SHIFT + F10 keys and the command prompt will open and write:
+11. We download the patches and transfer them to C:\
+12. The oscdimg.exe file instead we move it to D:\ (in the second drive) and turn off
+13. We set the boot with the Windows ISO on the virtual machine and start the machine
+14. At the first configuration screen, press the SHIFT + F10 keys and the command prompt will open and write:
 
 **⚠ ATTENTION!⚠**  
 THE UNITS MAY BE DIFFERENT, CONTROLLED WITH THE FIRST COMMAND!
@@ -170,11 +186,11 @@ exit
 dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
 ```
 
-13. We close the Windows installation and reboot
-14. If we have done everything right in the secondary we will find the file install.esd
-15. In the same drive we create a folder eg. files and we copy all the files from the Windows CD-ROM
-16. Copy the install.esd file into the \files\sources\ folder and overwrite
-17. Last step we run the following command to generate our beautiful ISO:
+15. We close the Windows installation and reboot
+16. If we have done everything right in the secondary we will find the file install.esd
+17. In the same drive we create a folder eg. files and we copy all the files from the Windows CD-ROM
+18. Copy the install.esd file inside the \files\sources\ folder and overwrite it (some versions have the install.win file, check inside sources)
+19. Last step we run the following command to generate our beautiful ISO:
 
 ```
 oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pEF,e,bD:\files\efi\microsoft\boot\efisys.bin D:\files D:\CustomWindows.iso
