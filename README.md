@@ -9,7 +9,8 @@
 %windir%\system32\sysprep\sysprep.exe /audit /reboot
 ```
 
-**⚠ ATTENZIONE! ⚠** AL RIAVVIO LA FINESTRA DI SYSPREP DEVE RIMANERE APERTA!
+**⚠ ATTENZIONE! ⚠**  
+AL RIAVVIO LA FINESTRA DI SYSPREP DEVE RIMANERE APERTA!
 
 3. Configurare una seconda unità HDD 
 4. Eliminare tutti gli utenti, no Amministratore
@@ -45,7 +46,8 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 11. Impostiamo sulla macchina virtuale il boot con la iso di Windows e avviamo la macchina
 12. Alla prima schermata di configurazione premiamo i tasti SHIFT+F10 e si aprirà il prompt dei comandi e scriviamo:
 
-**⚠ ATTENZIONE! ⚠** LE UNITA' POSSONO ESSERE DIFFERENTI, CONTROLLATE CON IL PRIMO COMANDO!
+**⚠ ATTENZIONE! ⚠**  
+LE UNITA' POSSONO ESSERE DIFFERENTI, CONTROLLATE CON IL PRIMO COMANDO!
 
 ```
 diskpart
@@ -73,25 +75,35 @@ dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindo
 oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pEF,e,bD:\files\efi\microsoft\boot\efisys.bin D:\files D:\CustomWindows.iso
 ```
 
-**⚠ ATTENZIONE! ⚠** Unità D:\ sopraccitata è l'unità HDD secondaria!
+**⚠ ATTENZIONE! ⚠**  
+Unità D:\ sopraccitata è l'unità HDD secondaria!
 
 
-## PATCH
-**post_install_1.bat**
+## ISTRUZIONI PATCH POST INSTALLAZIONE WINDOWS 10/11
 
-Avviamolo in modalità Amministratore nell'account dell'utente
+**Portare il file patch.bat sul nostro desktop**
+Avviamolo il file patch.bat e selezionare l'opzione 1
 
-**patch_admin.bat**
 
-Avviamo il seguente file nell'account di Amministratore
+**ENTRARE NELL'ACCOUNT AMMINISTRATORE**  
+Avviare di nuovo il file patch.bat e selezionare l'opzione 2
 
-**post_install_3.bat**
 
-Avviamo l'ultimo file nell'account dell'utente
+**RITORNIAMO NEL NOSTRO ACCOUNT UTENTE**  
+Per l'ultima volta avviamo il file patch.bat e selezioniamo l'opzione 3
 
-**⚠ ATTENZIONE! ⚠** I file devono essere eseguiti tutti come Amministratore
+**⚠ ATTENZIONE! ⚠**  
+I file devono essere eseguiti tutti come Amministratore
+
+<br>
+<br>
+<br>
 
 ---
+
+<br>
+<br>
+<br>
 
 ## _Manual in English_
 
@@ -102,7 +114,8 @@ Avviamo l'ultimo file nell'account dell'utente
 %windir%\system32\sysprep\sysprep.exe /audit /reboot
 ```
 
-**⚠ ATTENTION! ⚠** THE SYSPREP WINDOW MUST REMAIN OPEN ON REBOOT!
+**⚠ ATTENTION! ⚠**  
+THE SYSPREP WINDOW MUST REMAIN OPEN ON REBOOT!
 
 3. Configure a second HDD unit
 4. Delete all users, no Administrator
@@ -138,7 +151,8 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 11. We set the boot with the Windows ISO on the virtual machine and start the machine
 12. At the first configuration screen, press the SHIFT + F10 keys and the command prompt will open and write:
 
-**⚠ ATTENTION!⚠** THE UNITS MAY BE DIFFERENT, CONTROLLED WITH THE FIRST COMMAND!
+**⚠ ATTENTION!⚠**  
+THE UNITS MAY BE DIFFERENT, CONTROLLED WITH THE FIRST COMMAND!
 
 ```
 diskpart
@@ -166,22 +180,24 @@ dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindo
 oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pEF,e,bD:\files\efi\microsoft\boot\efisys.bin D:\files D:\CustomWindows.iso
 ```
 
-**⚠ ATTENTION! ⚠** Drive D:\ above is the secondary HDD drive!
+**⚠ ATTENTION! ⚠**  
+Drive D:\ above is the secondary HDD drive!
 
 
-## PATCH
-**post_install_1.bat**
+## WINDOWS 10/11 POST INSTALLATION PATCH INSTRUCTION
 
-Run it in Administrator mode in the user's account
+**Bring the patch.bat file to our desktop**  
+Run the patch.bat file and select option 1
 
-**patch_admin.bat**
 
-We launch the following file in the Administrator account
+**LOG IN TO THE ADMINISTRATOR ACCOUNT**  
+Run the patch.bat file again and select option 2
 
-**post_install_3.bat**
 
-We start the last file in the user account
+**WE RETURN TO OUR USER ACCOUNT**  
+For the last time we run the patch.bat file and select option 3
 
-**⚠ ATTENTION! ⚠** The files must all be run as Administrator
+**⚠ ATTENTION! ⚠**  
+The files must all be run as Administrator
 
 ---
