@@ -33,7 +33,7 @@ echo.
 echo.
 echo [31mAccount Administrator ACTIVATED![0m
 net user Administrator /active:yes
-timeout 1 > NUL
+timeout 1>NUL
 echo.
 echo.
 set/p "end=Press a key to disconnect the user!"
@@ -82,7 +82,7 @@ echo.
 echo [31mAccount Administrator DISABLED![0m
 net user Administrator /active:no
 cd C:\Users
-del /f /s /q Administrator 1>nul
+del /f /s /q Administrator 1>NUL
 rmdir /s /q Administrator
 timeout 1 > NUL
 echo.
@@ -95,10 +95,10 @@ set INPUT=true
 echo.
 echo Bye Bye!!!
 echo.
-timeout 2 > NUL
+timeout 2>NUL
 exit /b
 
 :DEFAULT
 echo Option not available
-timeout 2 > NUL
+timeout 2>NUL
 GOTO MENU_START
