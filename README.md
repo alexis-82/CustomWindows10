@@ -1,4 +1,4 @@
-# Custom Windows 10/11
+# Custom Windows 10
 
 ## _Manuale in Italiano_
 
