@@ -33,7 +33,7 @@ echo.
 echo.
 echo [31mAccount Administrator ACTIVATED![0m
 net user Administrator /active:yes
-timeout 1>NUL
+timeout 1 > NUL
 echo.
 echo.
 set/p "end=Press a key to disconnect the user!"
@@ -46,7 +46,7 @@ set fore_dred=[31m
 set underline=[4m
 echo.
 echo.
-wmic useraccount list full
+wmic useraccount get name,SID
 echo.
 echo.
 set/p "sid=[4mCopy the SID value here:[0m "
@@ -55,16 +55,18 @@ set/p "oldname=[4mCopy the name here:[0m "
 echo.
 set/p "newname=[4mEnter the new name:[0m "
 echo.
+echo.
+echo.
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\%sid%" /v ProfileImagePath /t REG_EXPAND_SZ /d C:\Users\%newname% /f
+echo.
+echo.
 cd c:\Users
-ren "%oldname%" "%newname%"
-echo.
-reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\%sid%" /v ProfileImagePath /t REG_SZ /d C:\Users\%newname% /f
-echo.
-echo.
+rename "%oldname%" "%newname%"
 echo.
 wmic useraccount where name="%oldname%" rename "%newname%"
+echo.
 echo [31mAccount Administrator DISABLED![0m
-net user Administrator /active:no
+:: net user Administrator /active:no
 timeout 1 > NUL
 echo.
 echo.
@@ -95,10 +97,10 @@ set INPUT=true
 echo.
 echo Bye Bye!!!
 echo.
-timeout 2>NUL
+timeout 2 > NUL
 exit /b
 
 :DEFAULT
 echo Option not available
-timeout 2>NUL
+timeout 2 > NUL
 GOTO MENU_START
