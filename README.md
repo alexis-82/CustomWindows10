@@ -8,7 +8,7 @@ RAM: 4GB
 HDD1: 60Gb (minimo)
 HDD2: 15Gb
 
-1. Installazione pulita di Windows 10/11
+1. Installazione pulita di Windows 10
 2. Formattare HDD2
 3. Entrare in modalità Administrator tramite CMD:
 
@@ -121,7 +121,7 @@ RAM: 4GB
 HDD 1: 60Gb (minimum)
 HDD 2: 15Gb
 
-1. Clean install of Windows 10/11
+1. Clean install of Windows 10
 2. Formattare HDD2
 3. Enter Administrator mode via CMD:
 
