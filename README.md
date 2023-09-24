@@ -3,16 +3,16 @@
 ## _Manuale in Italiano_
 
 ### Preparazione postazione
-Macchina virtuale  
+Macchina virtuale:  
 RAM: 4GB  
-HDD1: 60Gb (minimo)
+HDD1: 60Gb (minimo)  
 HDD2: 30Gb
 
 1. Installazione pulita di Windows 10
 2. Attivazione di Windows
 3. Aggiornamento del sistema
 4. Formattare HDD2
-5. Entrare in modalità Administrator tramite CMD:
+5. Entrare in modalità Amministratore tramite CMD:
 
 ```
 %windir%\system32\sysprep\sysprep.exe
@@ -76,7 +76,7 @@ dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindo
 
 15. Chiudiamo l'installazione di Windows e riavviare
 16. Se abbiamo fatto tutto bene nel disco secondario ci troveremo il file install.esd
-17. Nella stessa unità creamo una cartella es. files e ci copiamo tutti i files del CD-ROM di Windows
+17. Nella stessa unità creiamo una cartella es. files e ci copiamo tutti i files del CD-ROM di Windows
 18. Copiamo il file install.esd dentro alla cartella \files\sources\ e sovrascriviamo (alcune versioni hanno il file install.win, controllare all'interno di sources)
 19. Ultimo passaggio eseguiamo il seguente comando per generare la nostra bella ISO:
 
@@ -118,9 +118,9 @@ Per l'ultima volta avviamo il file patch.bat e selezioniamo l'opzione 3
 ## _Manual in English_
 
 ### Work station preparation
-Virtual machine
-RAM: 4GB
-HDD 1: 60Gb (minimum)
+Virtual machine:  
+RAM: 4GB  
+HDD 1: 60Gb (minimum)  
 HDD 2: 30Gb
 
 1. Clean install of Windows 10
