@@ -87,7 +87,7 @@ oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pE
 Unità D:\ sopraccitata è l'unità HDD secondaria!
 
 
-## ISTRUZIONI PATCH POST INSTALLAZIONE WINDOWS 10/11
+## ISTRUZIONI PATCH POST INSTALLAZIONE WINDOWS 10
 
 **Portare il file patch.bat sul nostro desktop**
 Avviamolo il file patch.bat e selezionare l'opzione 1
@@ -200,7 +200,7 @@ oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bD:\files\boot\etfsboot.com#pE
 Drive D:\ above is the secondary HDD drive!
 
 
-## WINDOWS 10/11 POST INSTALLATION PATCH INSTRUCTION
+## WINDOWS 10 POST INSTALLATION PATCH INSTRUCTION
 
 **Bring the patch.bat file to our desktop**  
 Run the patch.bat file and select option 1
