@@ -8,7 +8,7 @@ RAM: 4GB
 HDD1: 60Gb (minimo)  
 HDD2: 30Gb
 
-1. Installazione pulita di Windows 10
+1. Installazione pulita di Windows 10 (Account Microsoft offline)
 2. Attivazione di Windows
 3. Aggiornamento del sistema
 4. Formattare HDD2
@@ -36,8 +36,8 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTeleme
 9. Ora impostiamo Sysprep su "Passare alla Configurazione guidata", mettiamo la [x]spunta su Generalizza e su Opzioni di arresto del sistema mettiamo "Arresta il sistema" e OK.
 10. Riavviamo il sistema e facciamo le installazioni dei software tramite Chocolatey usando il terminale PowerShell come Amministratore
 ```
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
-iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
 ```
 
 ## Comandi Chocolatey
@@ -73,11 +73,11 @@ assign letter=B
 exit
 dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
 ```
-
+- il file install può avere anche estensione .wim
 15. Chiudiamo l'installazione di Windows e riavviare
 16. Se abbiamo fatto tutto bene nel disco secondario ci troveremo il file install.esd
 17. Nella stessa unità creiamo una cartella es. files e ci copiamo tutti i files del CD-ROM di Windows
-18. Copiamo il file install.esd dentro alla cartella \files\sources\ e sovrascriviamo (alcune versioni hanno il file install.win, controllare all'interno di sources)
+18. Copiamo il file install.esd (o .wim) dentro alla cartella \files\sources\ e sovrascriviamo (alcune versioni hanno il file install.win, controllare all'interno di sources)
 19. Ultimo passaggio eseguiamo il seguente comando per generare la nostra bella ISO:
 
 ```
@@ -123,7 +123,7 @@ RAM: 4GB
 HDD 1: 60Gb (minimum)  
 HDD 2: 30Gb
 
-1. Clean install of Windows 10
+1. Clean install of Windows 10 (Account Microsoft offline)
 2. Windows activation
 3. System update
 4. Formattare HDD2
@@ -151,8 +151,8 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTeleme
 9. Now let's set Sysprep to "Enter System Out-of-Box Experience (OOBE)", put the [x]tick on Generalize and on Shutdown Options put "Shut down" and OK.
 10. We restart the system and install the software via Chocolatey using the PowerShell terminal as Administrator
 ```
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
-iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
 ```
 
 ## Chocolatey commands
@@ -188,11 +188,11 @@ assign letter=B
 exit
 dism /capture-image /imagefile:B:\install.esd /capturedir:A:\ /name:"CustomWindows" /compress:maximum /checkintegrity /verify /bootable
 ```
-
+-the install file can also have the extension .wim
 15. We close the Windows installation and reboot
 16. If we have done everything right in the secondary we will find the file install.esd
 17. In the same drive we create a folder eg. files and we copy all the files from the Windows CD-ROM
-18. Copy the install.esd file inside the \files\sources\ folder and overwrite it (some versions have the install.win file, check inside sources)
+18. Copy the install.esd file inside the \files\sources\ folder and overwrite it (some versions have the install.esd (or .wim) file, check inside sources)
 19. Last step we run the following command to generate our beautiful ISO:
 
 ```
