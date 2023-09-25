@@ -93,15 +93,15 @@ Unità D:\ sopraccitata è l'unità HDD secondaria!
 **⚠ ATTENZIONE! ⚠**  
 Il file devono essere eseguiti tutti come Amministratore
 
-**ABILITIAMO L'ACCOUNT AMMINISTRATORE**
+**ABILITIAMO L'ACCOUNT AMMINISTRATORE:**  
 Avviamolo il file patch.bat e selezionare l'opzione 1
 
 
-**ENTRARE NELL'ACCOUNT AMMINISTRATORE**  
+**ENTRARE NELL'ACCOUNT AMMINISTRATORE:**  
 Avviare di nuovo il file patch.bat e selezionare l'opzione 2
 
 
-**RITORNIAMO NEL NOSTRO ACCOUNT UTENTE**  
+**RITORNIAMO NEL NOSTRO ACCOUNT UTENTE:**  
 Per l'ultima volta avviamo il file patch.bat e selezioniamo l'opzione 3
 
 
@@ -208,15 +208,15 @@ Drive D:\ above is the secondary HDD drive!
 **⚠ ATTENTION! ⚠**  
 The files must all be run as Administrator
 
-**WE ENABLE THE ADMINISTRATOR ACCOUNT**  
+**WE ENABLE THE ADMINISTRATOR ACCOUNT:**  
 Run the patch.bat file and select option 1
 
 
-**LOG IN TO THE ADMINISTRATOR ACCOUNT**  
+**LOG IN TO THE ADMINISTRATOR ACCOUNT:**  
 Run the patch.bat file again and select option 2
 
 
-**WE RETURN TO OUR USER ACCOUNT**  
+**WE RETURN TO OUR USER ACCOUNT:**  
 For the last time we run the patch.bat file and select option 3
 
 
